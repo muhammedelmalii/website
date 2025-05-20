@@ -8,4 +8,18 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   base: '/',
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'terser',
+    chunkSizeWarningLimit: 1600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          animations: ['framer-motion']
+        }
+      }
+    }
+  }
 });
