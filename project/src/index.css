@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-obsidian text-cosmic-white overflow-x-hidden;
+  margin: 0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif tracking-wide uppercase;
+}
+
+p {
+  @apply font-sans text-cosmic-white/80;
+}
+
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.cosmic-button {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-gold bg-obsidian-light 
+  text-sm font-medium text-cosmic-white uppercase tracking-wider shadow-sm hover:bg-obsidian 
+  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gold-light transition-all duration-300 ease-in-out;
+}
+
+.cosmic-button-primary {
+  @apply cosmic-button border-gold bg-gold/10 hover:bg-gold/20;
+}
+
+.cosmic-button-secondary {
+  @apply cosmic-button border-cosmic-gray/30 hover:border-cosmic-gray/60;
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px theme('colors.gold.DEFAULT');
+    color: transparent;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px theme('colors.gold.light');
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 15px 2px theme('colors.gold.DEFAULT');
+  }
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-obsidian;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold/30 rounded-full hover:bg-gold/50 transition-colors;
+}
